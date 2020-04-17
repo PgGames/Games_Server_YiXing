@@ -1,0 +1,9 @@
+F:\GitHub\Server_YiXing\server\Server\Server\bin\Debug\Server.exe
+F:\GitHub\Server_YiXing\server\Server\Server\bin\Debug\Server.pdb
+F:\GitHub\Server_YiXing\server\Server\Server\obj\Debug\Server.csprojAssemblyReference.cache
+F:\GitHub\Server_YiXing\server\Server\Server\obj\Debug\Server.Form1.resources
+F:\GitHub\Server_YiXing\server\Server\Server\obj\Debug\Server.Properties.Resources.resources
+F:\GitHub\Server_YiXing\server\Server\Server\obj\Debug\Server.csproj.GenerateResource.cache
+F:\GitHub\Server_YiXing\server\Server\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+F:\GitHub\Server_YiXing\server\Server\Server\obj\Debug\Server.exe
+F:\GitHub\Server_YiXing\server\Server\Server\obj\Debug\Server.pdb
