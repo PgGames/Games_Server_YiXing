@@ -81,16 +81,32 @@ namespace Server.ServerSocket
         /// </summary>
         private void ClientContent()
         {
-            var TempClient = mServer.mSocket.Accept();
+            try
+            {
+                var TempClient = mServer.mSocket.Accept();
 
-            TcpSocket Client = new TcpSocket(TempClient);
-            mClients.Add(Client);
-            Client.Receive();
-            //继续进行---连接监听
-            ClientContent();
+                TcpSocket Client = new TcpSocket(TempClient);
+                mClients.Add(Client);
+                Client.Receive();
+                //继续进行---连接监听
+                ClientContent();
+            }
+            catch
+            {
+            }
         }
 
 
+
+
+        public void CloseClient(TcpSocket varSocket)
+        {
+            if (mClients.Contains(varSocket))
+            {
+                mClients.Remove(varSocket);
+                varSocket.CloseSocket();
+            }
+        }
         /// <summary>
         /// 发生消息给所有客户端
         /// </summary>

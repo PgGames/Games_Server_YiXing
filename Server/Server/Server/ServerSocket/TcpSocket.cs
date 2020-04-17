@@ -8,14 +8,17 @@ using System.Threading;
 
 namespace Server.ServerSocket
 {
-    class TcpSocket
+    public class TcpSocket
     {
         public Socket mSocket;
         private IPEndPoint mIPEnd;
+        private byte[] mMsg;
+        private int mMaxLeng = 1024;
 
         public TcpSocket()
         {
             mSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+            mMsg = new byte[mMaxLeng];
         }
         public TcpSocket(Socket varSocket)
         {
@@ -78,7 +81,6 @@ namespace Server.ServerSocket
         {
             mSocket.Send(msg);
         }
-
         /// <summary>
         /// 接收来自客户端的消息
         /// </summary>
@@ -86,18 +88,19 @@ namespace Server.ServerSocket
         {
             try
             {
-                byte[] bytes = new byte[1024];
-                int meglen = mSocket.Receive(bytes);
-                MessagHandle(bytes, meglen);
+                while (true)
+                {
+                    byte[] bytes = new byte[1024];
+                    int meglen = mSocket.Receive(bytes);
+                    MessagHandle(bytes, meglen);
+                    //开启新的消息监听
+                    ClientReceive();
+                }
             }
             catch(System.Exception exp)
             {
+                ServerManager.Manager.CloseClient(this);
                 Console.WriteLine(exp.Message);
-            }
-            finally
-            {
-                //开启新的消息监听
-                ClientReceive();
             }
         }
         /// <summary>

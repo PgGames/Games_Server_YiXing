@@ -1,0 +1,6 @@
+F:\GitHub\Server_YiXing\cliend\Client\Client\bin\Debug\Client.exe
+F:\GitHub\Server_YiXing\cliend\Client\Client\bin\Debug\Client.pdb
+F:\GitHub\Server_YiXing\cliend\Client\Client\obj\Debug\Client.csprojAssemblyReference.cache
+F:\GitHub\Server_YiXing\cliend\Client\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+F:\GitHub\Server_YiXing\cliend\Client\Client\obj\Debug\Client.exe
+F:\GitHub\Server_YiXing\cliend\Client\Client\obj\Debug\Client.pdb
