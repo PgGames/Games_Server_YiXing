@@ -11,8 +11,17 @@ namespace Server.ServerSocket
     public class TcpSocket
     {
         public Socket mSocket;
+        /// <summary>
+        /// 客户端的IP和端口
+        /// </summary>
         private IPEndPoint mIPEnd;
+        /// <summary>
+        /// 处理消息的缓存区
+        /// </summary>
         private byte[] mMsg;
+        /// <summary>
+        /// 一次消息的最大字节量
+        /// </summary>
         private int mMaxLeng = 1024;
 
         public TcpSocket()
@@ -90,9 +99,9 @@ namespace Server.ServerSocket
             {
                 while (true)
                 {
-                    byte[] bytes = new byte[1024];
-                    int meglen = mSocket.Receive(bytes);
-                    MessagHandle(bytes, meglen);
+                    //byte[] bytes = new byte[1024];
+                    int meglen = mSocket.Receive(mMsg);
+                    MessagHandle(mMsg, meglen);
                     //开启新的消息监听
                     ClientReceive();
                 }

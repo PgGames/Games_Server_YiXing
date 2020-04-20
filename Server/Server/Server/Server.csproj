@@ -52,6 +52,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerSocket\ServerManager.cs" />
+    <Compile Include="ServerSocket\TcpHead.cs" />
     <Compile Include="ServerSocket\TcpSocket.cs" />
     <Compile Include="ServerView\AsyncSocketEventArgs.cs" />
     <Compile Include="ServerView\AsyncSocketState.cs" />
